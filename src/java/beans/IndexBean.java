@@ -11,6 +11,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import org.omnifaces.cdi.ViewScoped;
 
@@ -23,8 +25,8 @@ import org.omnifaces.cdi.ViewScoped;
 public class IndexBean implements Serializable
 
 {
-
     private String descricao;
+     Curso curso;
     @EJB
     private CursoFacade cursoFacade;
     private List<Curso> cursoList;
@@ -39,11 +41,22 @@ public class IndexBean implements Serializable
     //Business Methods
     public void gravar()
     {
-        Curso curso = new Curso();
-        curso.setDescricao(descricao);
-        this.cursoFacade.create(curso);
+        Curso curso1 = new Curso();
+        curso1.setDescricao(descricao);
+        this.cursoFacade.create(curso1);
     }
 
+    public void deletar(Curso curso)
+    {
+        this.cursoFacade.remove(curso);
+        cursoList.remove(curso);
+    }
+
+    public void update(Curso curso){
+        this.cursoFacade.edit(curso);
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Update successful"));
+    }
+    
     public List<Curso> getProductList()
     {
 
@@ -52,7 +65,6 @@ public class IndexBean implements Serializable
         cursoList = this.cursoFacade.findAll();
         //curso.setDescricao("Ola mundo");
         //this.cursoFacade.create(curso);
-
         //cursoList.add(curso);
         return cursoList;
     }

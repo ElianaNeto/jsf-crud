@@ -10,13 +10,14 @@
     <h:body>
         <h:form>
             <p:outputLabel value="Curso"/>
+            <br/>
             <p:inputText value="#{indexBean.descricao}"/>
             <p:commandButton value="Gravar" actionListener="#{indexBean.gravar()}"/>
-          
+
         </h:form>
 
         <h2><h:outputText value="Lista Curso"></h:outputText></h2>  
-        <h:dataTable value="#{indexBean.productList}" var="c">  
+        <h:dataTable id="cursoList" value="#{indexBean.productList}" var="c">  
             <h:column>  
                 <f:facet name="header">ID</f:facet>  
                 <h:outputText value="#{c.pkCurso}"/>  
@@ -25,7 +26,14 @@
                 <f:facet name="header">Name</f:facet>  
                 <h:outputText value="#{c.descricao}"/>  
             </h:column>  
+            <h:column>
+                <f:facet name="header"></f:facet>
+                <p:commandButton update="cursoList" value="Delete" 
+                                 action="#{indexBean.deletar(c)}" >        
+                </p:commandButton>
+            </h:column>
             
+
         </h:dataTable>  
 
     </h:body>
