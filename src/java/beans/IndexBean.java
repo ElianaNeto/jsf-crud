@@ -61,7 +61,7 @@ public class IndexBean implements Serializable
     {
 
         cursoList = new ArrayList<>();
-        // cursoList.add(curso);
+        //cursoList.add(curso);
         cursoList = this.cursoFacade.findAll();
         //curso.setDescricao("Ola mundo");
         //this.cursoFacade.create(curso);
