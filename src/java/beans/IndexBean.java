@@ -25,8 +25,9 @@ import org.omnifaces.cdi.ViewScoped;
 public class IndexBean implements Serializable
 
 {
+
     private String descricao;
-     Curso curso;
+    Curso curso;
     @EJB
     private CursoFacade cursoFacade;
     private List<Curso> cursoList;
@@ -52,20 +53,16 @@ public class IndexBean implements Serializable
         cursoList.remove(curso);
     }
 
-    public void update(Curso curso){
+    public void update(Curso curso)
+    {
         this.cursoFacade.edit(curso);
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Update successful"));
     }
-    
-    public List<Curso> getProductList()
-    {
 
+    public List<Curso> findCursoList()
+    {
         cursoList = new ArrayList<>();
-        //cursoList.add(curso);
         cursoList = this.cursoFacade.findAll();
-        //curso.setDescricao("Ola mundo");
-        //this.cursoFacade.create(curso);
-        //cursoList.add(curso);
         return cursoList;
     }
 
