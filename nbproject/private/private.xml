@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Users/eliananeto/NetBeansProjects/Ucandb/web/index.xhtml</file>
+            <file>file:/Users/eliananeto/NetBeansProjects/Ucandb/src/java/beans/ProfessorBean.java</file>
+            <file>file:/Users/eliananeto/NetBeansProjects/Ucandb/src/java/ejbs/entities/Curso.java</file>
+            <file>file:/Users/eliananeto/NetBeansProjects/Ucandb/src/java/ejbs/facades/ProfessorFacade.java</file>
+            <file>file:/Users/eliananeto/NetBeansProjects/Ucandb/src/java/ejbs/facades/CursoFacade.java</file>
+            <file>file:/Users/eliananeto/NetBeansProjects/Ucandb/src/java/beans/IndexBean.java</file>
+        </group>
     </open-files>
 </project-private>
